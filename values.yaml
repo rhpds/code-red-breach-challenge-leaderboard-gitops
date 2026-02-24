@@ -1,17 +1,17 @@
-appsSubdomain: {{ argo_customize_apps_subdomain }}
+appsSubdomain: {{ code_red_breach_challenge_argo_customize_apps_subdomain }}
 namespace: leaderboard
 
 ctfd:
-  cidr: {{ argo_customize_cidr }}
+  cidr: {{ code_red_breach_challenge_argo_customize_cidr }}
   userCreation:
     enabled: true
     image:
       repository: registry.redhat.io/openshift4/ose-tools-rhel9
       pullPolicy: IfNotPresent
       tag: latest
-    userCount: {{ argo_customize_num_users }}
-    userPrefix: {{ argo_customize_gitea_user_name_base }}
-    userDefaultPassword: {{ argo_customize_gitea_user_password }}
+    userCount: {{ code_red_breach_challenge_argo_customize_num_users }}
+    userPrefix: {{ code_red_breach_challenge_argo_customize_gitea_user_name_base }}
+    userDefaultPassword: {{ code_red_breach_challenge_argo_customize_gitea_user_password }}
   replicaCount: 1
   image:
     repository: ghcr.io/ctfd/ctfd
