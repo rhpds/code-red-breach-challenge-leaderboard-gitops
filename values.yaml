@@ -2,7 +2,7 @@ appsSubdomain: {{ code_red_breach_challenge_argo_customize_apps_subdomain }}
 namespace: leaderboard
 
 ctfd:
-  cidr: {{ code_red_breach_challenge_argo_customize_cidr }}
+  ext_ip: {{ _hacker_app_ip }}
   userCreation:
     enabled: true
     image:
