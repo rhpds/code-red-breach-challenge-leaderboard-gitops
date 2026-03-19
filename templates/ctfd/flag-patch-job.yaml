@@ -22,8 +22,8 @@ spec:
               RESPONSE=$(curl -s -X PATCH \
                   -H "Authorization: Token $CTFD_API_KEY" \
                   -H "Content-Type: application/json" \
-                  -d "{\"content\":\"$CIDR\",\"type\":\"static\",\"id\":\"9\"}" \
-                  https://$CTFD_ROUTE/api/v1/flags/7)
+                  -d "{\"content\":\"$EXT_IP\",\"type\":\"static\",\"id\":\"9\"}" \
+                  https://$CTFD_ROUTE/api/v1/flags/9)
               if echo "$RESPONSE" | grep -q '"success": true'; then
                   echo "Mission 1 flag successfully patched"
               else
@@ -31,8 +31,8 @@ spec:
                   exit 1
               fi
           env:
-            - name: CIDR
-              value: {{ .Values.ctfd.cidr }}-8500                           
+            - name: EXT_IP
+              value: {{ .Values.ctfd.ext_ip }}                           
             - name: CTFD_ROUTE
               value: {{ include "ctfd.name" . }}-{{ .Values.namespace }}.{{ .Values.appsSubdomain }} 
             - name: CTFD_API_KEY
