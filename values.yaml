@@ -3,6 +3,9 @@ namespace: leaderboard
 
 ctfd:
   ext_ip: {{ _hacker_app_ip }}
+  # showroom URL syntax: https://showroom-showroom-{{ guid }}-{{ userX }}.{{ openshift_cluster_ingress_domain }}
+  guid: {{ guid }}
+  ocp_domain: {{ openshift_cluster_ingress_domain }}
   userCreation:
     enabled: true
     image:
